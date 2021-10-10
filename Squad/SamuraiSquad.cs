@@ -8,9 +8,11 @@ namespace Army_02.Squad
 {
     class SamuraiSquad
     {
-        //Book[] books;
+        public string SquadName { get; set; }
         SamuraiSoldier[] samurais;
         int count;
+        public SamuraiSquad() { }
+        public SamuraiSquad(string SquadName) { this.SquadName = SquadName; }
         //перегрузка оператора '[]'
         public SamuraiSoldier this[int index]
         {

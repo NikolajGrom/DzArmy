@@ -1,7 +1,7 @@
 ﻿using Army_02.Squad;
 using System;
-using Army_02.Weapon;
 using Army_02.Soldiers;
+using Army_02.Army;
 
 namespace Army_02
 {
@@ -160,7 +160,10 @@ namespace Army_02
             System.Console.WriteLine(roman);
             */
             #endregion
+
             #region Squard
+            /*
+         
             int CountSold = 3;
             InfantrySquad infantry = new InfantrySquad(CountSold);
             SamuraiSquad samurai = new SamuraiSquad(CountSold);
@@ -182,7 +185,8 @@ namespace Army_02
                 Console.WriteLine(samurai[i]);
                 Console.WriteLine("------");
             }
-
+            */
+            /*
             for (int i = 0; i < CountSold; i++)
             {
                 for (int j = 0; j < CountSold; j++)
@@ -235,17 +239,53 @@ namespace Army_02
             }
 
             Console.WriteLine($"***********************************\n");
-          
+          */
 
 
             #endregion
 
+            #region Army
+
+            
+            int countArmy =3, CountSold = 3;
+           
+          
+            Army_Roman army_Roman = new Army_Roman(countArmy);
+            Army_Samurai army_Samurai = new Army_Samurai(countArmy);
+            army_Samurai.ArmyName = "SAMURAI";
+            army_Samurai.Add(new SamuraiSquad("Отряд_01"));
+            army_Samurai.Add(new SamuraiSquad("Отряд_02"));
+
+            SamuraiSquad squad1 = new SamuraiSquad(CountSold);
+            SamuraiSquad squad2 = new SamuraiSquad(CountSold);
+
+            squad1.SquadName = "Отряд_01";
+            squad1.Add(new ("s1"));
+            squad1.Add(new SamuraiSoldier("s2"));
+            squad1.Add(new SamuraiSoldier("s3"));
+
+            squad2.SquadName = "Отряд_02";
+            squad2.Add(new("s2.1"));
+            squad2.Add(new SamuraiSoldier("s2.2"));
+            squad2.Add(new SamuraiSoldier("s2.3"));
+
+
+            for (int i = 0; i < countArmy; i++)
+            {
+                Console.WriteLine($" "+ army_Samurai.ArmyName);
+                Console.WriteLine("------");
+                for (int j = 0; j < countArmy; j++)
+                {
+                    Console.WriteLine("\n " + squad1.SquadName + " "+squad1[i] + 
+                                      "\n " + squad2.SquadName +" "+ squad2[i]);
+                    Console.WriteLine("------");
+                }
+            }
+
+
+            #endregion
 
             Console.ReadKey();
-
-
-
-
 
         }
     }
